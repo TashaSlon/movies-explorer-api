@@ -1,7 +1,6 @@
-[![Tests](../../actions/workflows/tests-13-sprint.yml/badge.svg)](../../actions/workflows/tests-13-sprint.yml) [![Tests](../../actions/workflows/tests-14-sprint.yml/badge.svg)](../../actions/workflows/tests-14-sprint.yml)
-# Проект Mesto фронтенд + бэкенд
+# Проект бэкенда для диплома Яндекс.Практикум
 
-https://github.com/TashaSlon/express-mesto-gha
+https://github.com/TashaSlon/movies-explorer-api
 
 ## Директории
 
@@ -9,7 +8,6 @@ https://github.com/TashaSlon/express-mesto-gha
 `/controllers` — папка с файлами контроллеров пользователя и карточки   
 `/models` — папка с файлами описания схем пользователя и карточки  
   
-Остальные директории вспомогательные, создаются при необходимости разработчиком
 
 ## Запуск проекта
 
