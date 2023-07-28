@@ -1,6 +1,7 @@
 # Проект бэкенда для диплома Яндекс.Практикум
 
-https://github.com/TashaSlon/movies-explorer-api
+Адрес репозитория: https://github.com/TashaSlon/movies-explorer-api
+Адрес сервера: http://api.plyusnina.nomoreparties.sbs/
 
 ## Директории
 
