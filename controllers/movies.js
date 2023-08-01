@@ -4,7 +4,9 @@ const NotFoundError = require('../errors/not-found-err');
 const NotAllowError = require('../errors/not-allow-err');
 
 module.exports.getMovies = (req, res, next) => {
-  Movie.find({})
+  console.log(req.user._id);
+  Movie.find({ owner: req.user._id })
+    .orFail(() => new NotFoundError('Пользователь с указанным id не существует'))
     .then((movies) => res.status(200).send(movies))
     .catch((err) => {
       next(err);

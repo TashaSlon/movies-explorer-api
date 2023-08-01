@@ -28,10 +28,18 @@ const movieSchema = new mongoose.Schema({
   trailerLink: {
     type: String,
     required: true,
+    validate: {
+      validator: (v) => /^https?:\/\/w*.?[a-zA-Z0-9_./\-#]*/gmi.test(v),
+      message: 'Неправильная ссылка',
+    },
   },
   thumbnail: {
     type: String,
     required: true,
+    validate: {
+      validator: (v) => /^https?:\/\/w*.?[a-zA-Z0-9_./\-#]*/gmi.test(v),
+      message: 'Неправильная ссылка',
+    },
   },
   owner: {
     type: mongoose.Schema.Types.ObjectId,
