@@ -55,7 +55,7 @@ module.exports.createUser = (req, res, next) => {
           next(new ExistError('При регистрации указан email, который уже существует на сервере'));
         } else
         if (err.name === 'ValidationError') {
-          next(new BadRequestError('Некорректные данные при создании карточки'));
+          next(new BadRequestError('Некорректные данные при регистрации'));
         } else {
           next(err);
         }

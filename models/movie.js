@@ -35,7 +35,7 @@ const movieSchema = new mongoose.Schema({
   },
   thumbnail: {
     type: String,
-    required: true,
+    required: false,
     validate: {
       validator: (v) => /^https?:\/\/w*.?[a-zA-Z0-9_./\-#]*/gmi.test(v),
       message: 'Неправильная ссылка',
@@ -47,7 +47,7 @@ const movieSchema = new mongoose.Schema({
     required: true,
   },
   movieId: {
-    type: Number,
+    type: String,
     required: true,
   },
   nameRU: {
