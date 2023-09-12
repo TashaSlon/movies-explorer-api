@@ -20,8 +20,8 @@ const { PORT = 3000, NODE_ENV, DB } = process.env;
 const app = express();
 
 const allowedCors = [
-  'https://plyusnina.nomoreparties.sbs',
-  'http://plyusnina.nomoreparties.sbs',
+  'https://plyusnina.nomoredomainsicu.ru',
+  'http://plyusnina.nomoredomainsicu.ru',
   'http://localhost:3001',
   'http://localhost:3000',
 ];
@@ -71,9 +71,9 @@ app.post('/signin', celebrate({
 }), login);
 app.post('/signup', celebrate({
   body: Joi.object().keys({
+    name: Joi.string().min(2).max(30),
     email: Joi.string().required().regex(/^[a-z0-9._%+-]+@[a-z0-9-]+.+.[a-z]{2,4}$/i),
     password: Joi.string().required().min(8),
-    name: Joi.string().min(2).max(30),
   }),
 }), createUser);
 
@@ -89,7 +89,6 @@ app.use(errorLogger);
 app.use(errors());
 app.use((err, req, res, next) => {
   const { statusCode = 500, message } = err;
-  console.log(err);
   res
     .status(statusCode)
     .send({

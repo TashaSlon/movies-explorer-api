@@ -38,17 +38,17 @@ module.exports.updateUser = (req, res, next) => {
 };
 
 module.exports.createUser = (req, res, next) => {
-  const { email, name } = req.body;
+  const { name, email } = req.body;
 
   bcrypt.hash(req.body.password, 10)
     .then((hash) => User.create({
+      name,
       email,
       password: hash,
-      name,
     })
       .then((user) => res.status(201).send({
-        email: user.email,
         name,
+        email: user.email,
       }))
       .catch((err) => {
         if (err.code === 11000) {
