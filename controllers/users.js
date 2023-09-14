@@ -92,6 +92,6 @@ module.exports.logout = (req, res) => {
     httpOnly: true,
     sameSite: 'none',
     secure: true,
-    expires: true,
+    expires: false,
   }).send({ message: 'Выход' });
 };
