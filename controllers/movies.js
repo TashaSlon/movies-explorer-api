@@ -25,6 +25,7 @@ module.exports.createMovie = (req, res, next) => {
     nameEN,
     movieId,
   } = req.body;
+  console.log(req.body);
 
   Movie.create(
     {

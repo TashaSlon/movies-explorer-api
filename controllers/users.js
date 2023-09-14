@@ -87,5 +87,11 @@ module.exports.login = (req, res, next) => {
 };
 
 module.exports.logout = (req, res) => {
-  res.clearCookie('jwt').send({ message: 'Выход' });
+  res.cookie('jwt', jwt, {
+    maxAge: 3600000 * 24 * 7,
+    httpOnly: true,
+    sameSite: 'none',
+    secure: true,
+    expires: true,
+  }).send({ message: 'Выход' });
 };
