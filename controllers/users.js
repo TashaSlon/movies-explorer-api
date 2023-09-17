@@ -46,10 +46,21 @@ module.exports.createUser = (req, res, next) => {
       email,
       password: hash,
     })
-      .then((user) => res.status(201).send({
-        name,
-        email: user.email,
-      }))
+      .then((user) => {
+        const jwt = jwtoken.sign({
+          _id: user._id,
+        }, NODE_ENV === 'production' ? JWT_SECRET : 'dev-secret');
+        res.cookie('jwt', jwt, {
+          maxAge: 3600000 * 24 * 7,
+          httpOnly: true,
+          sameSite: 'none',
+          secure: true,
+        });
+        res.status(201).send({
+          name,
+          email: user.email,
+        });
+      })
       .catch((err) => {
         if (err.code === 11000) {
           next(new ExistError('При регистрации указан email, который уже существует на сервере'));
