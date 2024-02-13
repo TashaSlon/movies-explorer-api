@@ -1,16 +1,30 @@
-# Проект бэкенда для диплома Яндекс.Практикум
+# Project: Movies. Backend
 
-Адрес репозитория: https://github.com/TashaSlon/movies-explorer-api
-Адрес сервера: http://api.plyusnina.nomoreparties.sbs/
+[GitHub repository for frontend](https://github.com/TashaSlon/movies-explorer-frontend) \
+[GitHub repository for backend](https://github.com/TashaSlon/movies-explorer-api) \
+[Design - dark-2](https://www.figma.com/file/6FMWkB94wE7KTkcCgUXtnC/light-1?type=design&node-id=1-7266&mode=dev)
 
-## Директории
+This project was developed on NodeJS as a final work in Yandex.Practicum.
 
-`/routes` — папка с файлами роутера  
-`/controllers` — папка с файлами контроллеров пользователя и карточки   
-`/models` — папка с файлами описания схем пользователя и карточки  
+## Directories
+
+`/routes` — router's files \
+`/controllers` — files of user and card controllers  \
+`/models` — files with description user and card schemes 
   
 
-## Запуск проекта
+## Available Scripts
 
-`npm run start` — запускает сервер   
-`npm run dev` — запускает сервер с hot-reload
+In the project directory, you can run:
+
+### `npm start`
+
+Runs the app in the development mode.\
+Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+
+### `npm dev`
+Runs the server with hot-reload
+
+### `npm run build`
+
+Builds the app for production to the `build` folder.
